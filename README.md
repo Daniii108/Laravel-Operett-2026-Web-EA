@@ -4,6 +4,7 @@ A projektben egy Laravel keretrendszer alapú webalkalmazást hozunk létre, ami
 
 Használt technológiák:
 - PHP
+- HTML
 - Laravel
 - MySQL
 - CSS
