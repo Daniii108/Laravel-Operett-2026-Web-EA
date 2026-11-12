@@ -14,3 +14,4 @@ class Alkoto extends Model
         return $this->hasMany(Kapcsolat::class);
     }
 }
+

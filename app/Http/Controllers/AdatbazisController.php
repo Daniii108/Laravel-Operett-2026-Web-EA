@@ -1,16 +1,22 @@
 <?php
 
-namespace App\Models;
+namespace App\Http\Controllers;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use App\Models\Kapcsolat;
+use App\Models\Mu;
+use App\Models\Alkoto;
 
-class Alkoto extends Model
+
+class AdatbazisController extends Controller
 {
-    protected $table = 'alkoto';
-    protected $fillable = ['id', 'nev'];
-
-    public function kapcsolatok()
+    public function index()
     {
-        return $this->hasMany(Kapcsolat::class);
+        $alkoto = Alkoto::all();
+        $mu = Mu::all();
+        $kapcsolat = Kapcsolat::all();
+        //$kapcsolat = Kapcsolat::with(['mu', 'alkoto'])->get();
+        return view('adatbazis', compact('alkoto', 'mu', 'kapcsolat'));
     }
+
 }
